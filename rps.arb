@@ -1,0 +1,95 @@
+def game
+    #Title/Instructions for Program
+    puts "Rock, Paper, or Scissor ?!?! (Please enter your answer)\n\n\n"
+    
+    #(1)getting input from user + (2)changing to lowercase allowing for uppercase and lowercase answers
+    input = gets.chomp #(1)
+    answer = input.downcase#(2)
+    
+    #(1)Setting up data for CPU to chose from (2)randomly
+    choices = ["rock","paper", "scissor"] #(1)
+    cpuAnswer = choices[rand(0..choices.length-1)] #(2)
+    
+    #Versus sign
+    puts "\n\n\n██╗   ██╗███████╗   
+██║   ██║██╔════╝   
+██║   ██║███████╗   
+╚██╗ ██╔╝╚════██║   
+ ╚████╔╝ ███████║██╗
+  ╚═══╝  ╚══════╝╚═╝\n\n\n"
+    
+  puts cpuAnswer
+    
+    #checking if answers are the same results in a tie for game if true
+    if answer == cpuAnswer
+      puts "\n\n\n████████╗██╗███████╗    ██╗██╗██╗
+╚══██╔══╝██║██╔════╝    ██║██║██║
+   ██║   ██║█████╗      ██║██║██║
+   ██║   ██║██╔══╝      ╚═╝╚═╝╚═╝
+   ██║   ██║███████╗    ██╗██╗██╗
+   ╚═╝   ╚═╝╚══════╝    ╚═╝╚═╝╚═╝
+                                 "
+      #compares player answer vs cpuAnswer to determine winner
+    elsif answer == "paper" && cpuAnswer == "rock"
+      puts"\n\n\n██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗    ██╗██╗██╗
+╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║    ██║██║██║
+ ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║    ██║██║██║
+  ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║    ╚═╝╚═╝╚═╝
+   ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║    ██╗██╗██╗
+   ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝    ╚═╝╚═╝╚═╝"
+    elsif answer == "paper" && cpuAnswer == "scissor"
+      puts "\n\n\n██╗   ██╗ ██████╗ ██╗   ██╗    ██╗      ██████╗ ███████╗███████╗    ██╗██╗██╗
+╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║     ██╔═══██╗██╔════╝██╔════╝    ██║██║██║
+ ╚████╔╝ ██║   ██║██║   ██║    ██║     ██║   ██║███████╗█████╗      ██║██║██║
+  ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝      ╚═╝╚═╝╚═╝
+   ██║   ╚██████╔╝╚██████╔╝    ███████╗╚██████╔╝███████║███████╗    ██╗██╗██╗
+   ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝    ╚═╝╚═╝╚═╝
+                                                                             "
+    elsif answer == "scissor" && cpuAnswer == "paper"
+      puts "██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗    ██╗██╗██╗
+╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║    ██║██║██║
+ ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║    ██║██║██║
+  ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║    ╚═╝╚═╝╚═╝
+   ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║    ██╗██╗██╗
+   ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝    ╚═╝╚═╝╚═╝"
+    elsif answer == "scissor" && cpuAnswer == "rock"
+      puts "\n\n\n██╗   ██╗ ██████╗ ██╗   ██╗    ██╗      ██████╗ ███████╗███████╗    ██╗██╗██╗
+╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║     ██╔═══██╗██╔════╝██╔════╝    ██║██║██║
+ ╚████╔╝ ██║   ██║██║   ██║    ██║     ██║   ██║███████╗█████╗      ██║██║██║
+  ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝      ╚═╝╚═╝╚═╝
+   ██║   ╚██████╔╝╚██████╔╝    ███████╗╚██████╔╝███████║███████╗    ██╗██╗██╗
+   ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝    ╚═╝╚═╝╚═╝
+                                                                             "
+    elsif answer == "rock" && cpuAnswer == "scissor"
+      puts "\n\n\n██╗   ██╗ ██████╗ ██╗   ██╗    ██╗    ██╗██╗███╗   ██╗    ██╗██╗██╗
+╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║    ██║██║████╗  ██║    ██║██║██║
+ ╚████╔╝ ██║   ██║██║   ██║    ██║ █╗ ██║██║██╔██╗ ██║    ██║██║██║
+  ╚██╔╝  ██║   ██║██║   ██║    ██║███╗██║██║██║╚██╗██║    ╚═╝╚═╝╚═╝
+   ██║   ╚██████╔╝╚██████╔╝    ╚███╔███╔╝██║██║ ╚████║    ██╗██╗██╗
+   ╚═╝    ╚═════╝  ╚═════╝      ╚══╝╚══╝ ╚═╝╚═╝  ╚═══╝    ╚═╝╚═╝╚═╝"
+    elsif answer == "rock" && cpuAnswer == "paper"
+      puts "\n\n\n██╗   ██╗ ██████╗ ██╗   ██╗    ██╗      ██████╗ ███████╗███████╗    ██╗██╗██╗
+╚██╗ ██╔╝██╔═══██╗██║   ██║    ██║     ██╔═══██╗██╔════╝██╔════╝    ██║██║██║
+ ╚████╔╝ ██║   ██║██║   ██║    ██║     ██║   ██║███████╗█████╗      ██║██║██║
+  ╚██╔╝  ██║   ██║██║   ██║    ██║     ██║   ██║╚════██║██╔══╝      ╚═╝╚═╝╚═╝
+   ██║   ╚██████╔╝╚██████╔╝    ███████╗╚██████╔╝███████║███████╗    ██╗██╗██╗
+   ╚═╝    ╚═════╝  ╚═════╝     ╚══════╝ ╚═════╝ ╚══════╝╚══════╝    ╚═╝╚═╝╚═╝
+                                                                             "
+    end #end for if 
+   
+    
+end #end for function game
+    
+game
+=begin
+    
+    Did you enjoy completing this challenge? If so, what was the most fun part?
+    
+    I did enjoy completing this challenge because I never had to make a game where I had to account for playing a against a computer. The most fun part was adding more touches to it to make it more visually appealing to the player. 
+    
+    What did you do to learn how to code for this challenge?
+    To learn how to code for this challenge I had to think about how RPS could be played in a progam. I had to think about whether the game should be played by two human players or to have a player go against a CPU. I figured that if I had a player going against a CPU I had to figure out whether 
+    What was the hardest part about this challenge?
+    If you had more time, what would you do to make it better?
+    
+=end
